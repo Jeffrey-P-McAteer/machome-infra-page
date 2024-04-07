@@ -5,7 +5,12 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <meta http-equiv="X-UA-Compatible" content="ie=edge" />
     <title>MacHome Cyber Infrastructure</title>
-
+    <style>
+      h1 {
+        text-decoration: underline;
+        font-weight: bold;
+      }
+    </style>
   </head>
   <body>
 
@@ -16,6 +21,7 @@
 This box is wired to the Comcast network connection over Coax cable.
 It provides a DHCP server which assigns IP addresses to every device on the MacHome network.
 This broadcasts the wireless access point "MacHome 2.4ghz".
+Located near air vent in living room.
 
 IP address is self-assigned.
 IP address = 192.168.5.1
@@ -30,6 +36,7 @@ This box is connected to "MG8702 Motorolla Gateway" with an ethernet cable.
 It is setup in Bridge mode and does not route traffic beyond repeating everything over ethernet
 and wireless links.
 This broadcasts the wireless access point "MacHome 5ghz".
+Located near air vent in living room.
 
 IP address is self-assigned.
 IP address = 192.168.5.2
@@ -42,13 +49,81 @@ This box is connected to "MG8702 Motorolla Gateway" with an ethernet cable runni
 It is setup in Bridge mode and does not route traffic beyond repeating everything over ethernet
 and wireless links.
 This broadcasts the wireless access point "MacHome 2.4ghz". (designed to remove dead zone on that side of the house)
+Located behind & under TV.
 
 IP address is self-assigned.
 IP address = 192.168.5.4
 
 </pre>
 
+<h1>Equipment (static)</h1>
 
+
+<h2><a href="http://192.168.5.118">Canon Pixima TR4520 Printer</a></h2>
+<pre>
+This printer is connected over USB to the PC and wirelessly to the "MG8702 Motorolla Gateway" over "MacHome 2.4ghz".
+Located to left of PC.
+
+
+IP address is DHCP-assigned by "MG8702 Motorolla Gateway".
+IP address = 192.168.5.118
+
+</pre>
+
+
+<h2><a href="http://192.168.5.180">Synology NAS</a></h2>
+<pre>
+This is a Network-Attached Storage Device (NAS) that has one internal hard drive and one USB-connected external hard drive.
+Synology apps can send and recieve data (photos, documents) to the internal hard drive and every evening
+at midnight contents of the internal hard drive are copied to the external one. This means if a photo is deleted on Monday,
+you can go back to the external drive Friday and get it back.
+
+Everyone in the family has a user account, username should be lowercase first name and if unset the password will be the same.
+
+This is connected to "MG8702 Motorolla Gateway" over ethernet.
+Located near air vent in living room.
+
+IP address is DHCP-assigned by "MG8702 Motorolla Gateway".
+IP address = 192.168.5.180
+
+</pre>
+
+
+<h2><a href="http://192.168.5.52">Train Table</a></h2>
+<pre>
+This is a rasperry pi running Arch Linux with custom software running on it to control
+a stepper motor and provide camera access and auto-positioning correction for the railroad downstairs.
+Will be powered off most of the time and takes approx 60 seconds to come online after powered on.
+
+This is connected to "MG8702 Motorolla Gateway" over over "MacHome 2.4ghz".
+Located downstairs under train layout.
+
+IP address is DHCP-assigned by "MG8702 Motorolla Gateway".
+IP address = 192.168.5.52
+
+</pre>
+
+
+
+<h1>Equipment (dynamic)</h1>
+
+<h2>Philips Hue Bridge</h2>
+<pre>
+The Philips Hue Bridge has no fixed address and is ethernet-connected to "Linksys Router".
+It serves as a radio adapter to Philips Hue bulbs and the front door motion sensor and presents
+those peripherals to the Apple TV.
+
+Located near air vent in living room, directly on top of "Linksys Router".
+</pre>
+
+
+<h2>Apple TV</h2>
+<pre>
+The Apple TV has no fixed address and is ethernet-connected to "D-Link Router".
+It is connected to the Synology NAS for video playback and several cloud TV providers via their various apps.
+
+Located under TV atop the stereo system.
+</pre>
 
 
 
