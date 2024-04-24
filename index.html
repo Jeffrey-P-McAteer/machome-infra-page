@@ -127,6 +127,45 @@ IP address = 192.168.5.52
 
 </pre>
 
+<details style="max-width: 600pt;">
+  <summary><b><u>Train Table Setup Guide</u></b></summary>
+  <p style="margin-left: 18pt;">
+    All code for the train table is available at <a href="https://github.com/jeffrey-P-McAteer/transfer-table-2023">https://github.com/jeffrey-P-McAteer/transfer-table-2023</a>, the original setup documentation written during construction is in the file <a href="https://github.com/Jeffrey-P-McAteer/transfer-table-2023/blob/master/install-notes.md">install-notes.md</a>
+    <br/><br/>
+    The following attemps to break down setup from a technical level to a more beginner-suited level, and references the places where design decisions do not matter and setup options are
+    arbitrary, and places where design decisions must be constrained to ensure the software will work as expected.
+    <br/>
+    We assume setup on a Raspberry Pi 3 Model B, manufactured around 2015.
+    <br/>
+    The original operating system setup was Arch Linux due to it's low system overhead and already-close-to-embedded nature.
+    Arch does not need to be used; any OS that you know how to manage will do, the code only needs <code>/dev/fb0</code>,
+    access to the Pi's GPIO pins, and keybord events from the kernel itself (ie, will be identical across pretty much every OS unless it chooses to remove keyboards from the system tree).
+    <br/><br/>
+    To begin, we'll need a computer that can download the operating system media and partition a microSD card. The author happend to recommend using another Arch system for this,
+    but to avoid chicken-and-egging the reader out you can use a Linux system like <a href="https://fedoraproject.org/workstation/">Fedora</a> which is easy to setup. Dual-booting with windows is not advised, just grab <a href="https://www.amazon.com/s?k=100gb+usb+external+hdd&rh=p_36%3A-2500&mfadid=adm&qid=1713997846&rnid=386442011&tag=admarketus-20&ref=sr_nr_p_36_3">any spare 100gb+ usb hard drive</a> and use a spare 8gb usb drive to install to that, leaving your primary boot drive alone.
+  </p>
+    <details style="margin-left: 18pt;">
+      <summary>archlinuxarm.org has a basic setup guide for the Pi 3. <a href="https://archlinuxarm.org/platforms/armv8/broadcom/raspberry-pi-3">link</a></summary>
+      <a href="https://archlinuxarm.org/platforms/armv8/broadcom/raspberry-pi-3">
+        <img src="imgs/rpi3-archlinux-arm-ref1.png" style="border: solid 1px black;" />
+      </a>
+    </details>
+    <br/>
+  <p style="margin-left: 18pt;">
+    The setup guide includes a section on using <code>AArch64 Installation</code>; DO NOT USE AArch64! The closed source vendor libraries shipped in the ARMv7 release include support for writing to GPIO pins used to drive the motor. It is possible to take the same <a href="https://github.com/raspberrypi/linux/">kernel modified for use in the raspian OS</a> and <a href="https://archlinuxarm.org/forum/viewtopic.php?f=65&t=14843#p65336">build it for use in an Arch system</a>, but this is not a short path to setting up the code for the transfer table and none of the tasks we want to do benefit in a meaningful way from using 64-bit pointers.
+    <br/>
+    Once we have the vanilla Arch system flashed to the microSD card we have two options for initial setup. We can either plug in a keyboard+mouse+monitor and type in the following commands,
+    or plug in an ethernet cable and hard-wire the pi to a network we trust.
+
+
+
+
+
+
+  </p>
+</details>
+
+
 
 
 
