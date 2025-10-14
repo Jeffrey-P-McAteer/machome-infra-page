@@ -99,10 +99,8 @@ IP address = 192.168.5.118
 
 <h2><a href="http://192.168.5.180">Synology NAS</a></h2>
 <pre>
-This is a Network-Attached Storage Device (NAS) that has one internal hard drive and one USB-connected external hard drive.
-Synology apps can send and recieve data (photos, documents) to the internal hard drive and every evening
-at midnight contents of the internal hard drive are copied to the external one. This means if a photo is deleted on Monday,
-you can go back to the external drive Friday and get it back.
+This is a Network-Attached Storage Device (NAS) that has four internal hard drives and one internal NVME drive used as read/write cache.
+Synology apps can send and recieve data (photos, documents) to the internal hard drives.
 
 Everyone in the family has a user account, username should be lowercase first name and if unset the password will be the same.
 
@@ -113,6 +111,18 @@ IP address is DHCP-assigned by "MG8702 Motorolla Gateway".
 IP address = 192.168.5.180
 
 </pre>
+
+<details style="max-width: 600pt;">
+  <summary><b><u>Synology Configuration Details</u></b></summary>
+  <p style="margin-left: 18pt;">
+    Trash Cans are setup for the <i>family-photos</i>, <i>homes</i>, and <i>miscellaneous</i> network folders. These will retain up to 8GB of deleted files, and when the trash size exceeds 8GB the oldest files will be deleted until fewer than 8GB of trash data remains.
+    <br/>
+    The NVME Drive we bought is not officially supported by Synology, so we added it's vendor ID to the list of devices Synology's software trusts.
+    Setup guide is at <a href="https://github.com/007revad/Synology_HDD_db">https://github.com/007revad/Synology_HDD_db</a>
+    <br/>
+    <br/>
+  </p>
+</details>
 
 
 <h2><a href="http://192.168.5.52">Train Table</a></h2>
