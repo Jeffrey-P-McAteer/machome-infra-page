@@ -117,6 +117,9 @@ IP address = 192.168.5.180
   <p style="margin-left: 18pt;">
     Trash Cans are setup for the <i>family-photos</i>, <i>homes</i>, and <i>miscellaneous</i> network folders. These will retain up to 8GB of deleted files, and when the trash size exceeds 8GB the oldest files will be deleted until fewer than 8GB of trash data remains.
     <br/><br/>
+    The 4 drives in the front are configured as <a href="https://kb.synology.com/en-us/DSM/tutorial/What_is_Synology_Hybrid_RAID_SHR">Synology Hybrid RAID (SHR, With data protection for 2-drive fault tolerance).</a><br/>
+    If a drive fails the following guide will outline steps to disable, remove, and repair the storage volume. <a href="https://www.geekbitzone.com/posts/2021/nas/synology/drive-replacement/replace-drive-synology-dsm62/">https://www.geekbitzone.com/posts/2021/nas/synology/drive-replacement/replace-drive-synology-dsm62/</a>. If that website no longer has the document, an <a href="docs/How_to_replace_a_drive_on_a_Synology_NAS_GeekBitZone.pdf">archived .pdf is available</a>.
+    <br/><br/>
     The NVME Drive we bought is not officially supported by Synology, so we SSHed in and added its vendor ID to the list of devices Synology software trusts.
     Setup guide is at <a href="https://github.com/007revad/Synology_HDD_db">https://github.com/007revad/Synology_HDD_db</a>
     <br/><br/>
